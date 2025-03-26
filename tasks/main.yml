@@ -45,7 +45,7 @@
 
 - name: 'Merge configs and restart SSHD'
   ansible.builtin.assemble:
-    dest: '/etc/ssh/sshd_config'
+    dest: '{{ sshd_dest_config_file }}'
     src: '/etc/ssh/conf.d'
     owner: 'root'
     group: 'root'

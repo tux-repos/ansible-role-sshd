@@ -11,6 +11,7 @@
 # The files are merged in the order they are listed in /etc/ssh/conf.d
 # The base configuration is 00, but can be disabled
 sshd_base_config_enabled: true
+sshd_dest_config_file: '/etc/ssh/sshd_config'
 
 # Location relative to the playbookdir/files where the config files are located
 sshd_configdir: 'sshd_configs/'
