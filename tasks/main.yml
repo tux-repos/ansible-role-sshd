@@ -45,8 +45,8 @@
 
 - name: 'Crypto policy file equals sshd_config settings. Also a dirty hack for the mean time'
   ansible.builtin.template:
-    dest: '/usr/share/crypto-policies/DEFAULT/opensshserver.txt' # this file (/etc/crypto-policies/back-ends/openssh.config) links to the default policy at this time. this should be variable depending on crypto policy setting.
-    src: 'openssh.config.j2'
+    dest: '/usr/share/crypto-policies/DEFAULT/opensshserver.txt' # this file (/etc/crypto-policies/back-ends/opensshserver.config) links to the default policy at this time. this should be variable depending on crypto policy setting.
+    src: 'opensshserver.config.j2'
     owner: 'root'
     group: 'root'
     mode: '0644'
