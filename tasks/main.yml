@@ -50,7 +50,7 @@
     owner: 'root'
     group: 'root'
     mode: '0644'
-  when: when: ansible_os_family == 'RedHat' and ansible_distribution_major_version|int == 8 
+  when: ansible_os_family == 'RedHat' and ansible_distribution_major_version|int == 8 
   notify:
     - 'Restart sshd'
 
