@@ -38,6 +38,10 @@ sshd_hostkeys_enabled:
 sshd_kexalgos: 'curve25519-sha256@libssh.org'
 sshd_ciphers: 'chacha20-poly1305@openssh.com'
 sshd_macs: 'hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com'
+sshd_gssapikexalgos:
+sshd_casignaturealgorithms:
+sshd_pubkeyacceptedalgorithms:
+sshd_hostkeyalgorithms:
 
 # Print Message of the Day after login
 sshd_print_motd: 'yes'

@@ -43,6 +43,17 @@
     loop_var: 'file'
   when: sshd_configs | length > 0
 
+- name: 'Crypto policy file equals sshd_config settings. Also a dirty hack for the mean time'
+  ansible.builtin.template:
+    dest: '/usr/share/crypto-policies/DEFAULT/opensshserver.txt' # this file (/etc/crypto-policies/back-ends/openssh.config) links to the default policy at this time. this should be variable depending on crypto policy setting.
+    src: 'openssh.config.j2'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+  when: when: ansible_os_family == 'RedHat' and ansible_distribution_major_version|int == 8 
+  notify:
+    - 'Restart sshd'
+
 - name: 'Merge configs and restart SSHD'
   ansible.builtin.assemble:
     dest: '{{ sshd_dest_config_file }}'
